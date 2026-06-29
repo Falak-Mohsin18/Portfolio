@@ -11,9 +11,9 @@ html {
 }
 
 body {
-  background: #08111f;
-  color: white;
-  font-family: Inter, sans-serif;
+  background: #090d16;
+  color: #f8fafc;
+  font-family: Inter, system-ui, -apple-system, sans-serif;
   overflow-x: hidden;
 }
 
@@ -24,4 +24,13 @@ a {
 
 button {
   cursor: pointer;
+}
+
+.global-container {
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto;
+  padding-left: clamp(24px, 5vw, 64px);
+  padding-right: clamp(24px, 5vw, 64px);
+  box-sizing: border-box;
 }

@@ -12,7 +12,7 @@ const projects = [
       "MetaMask",
     ],
     github: "https://github.com/Falak-Mohsin18/Trustpay",
-    demo: "#",
+    demo: "https://lnkd.in/gVZj4yuC",
   },
 
   {
@@ -30,7 +30,7 @@ const projects = [
     ],
     github:
       "https://github.com/Falak-Mohsin18/Chainvista---Supply-Chain-Management-using-IOT-and-Blockchain",
-    demo: "#",
+    demo: "https://chainvista-njvp.onrender.com",
   },
 
   {
@@ -46,7 +46,7 @@ const projects = [
       "AI",
     ],
     github: "https://github.com/Falak-Mohsin18/finance-fussion",
-    demo: "#",
+    demo: "https://finance-fussion-8o7l.onrender.com",
   },
 
   {
@@ -63,7 +63,7 @@ const projects = [
     ],
     github:
       "https://github.com/Falak-Mohsin18/AICTE-BATCH1-AI-BOOK-INSIGHT",
-    demo: "#",
+    demo: "https://aicte-batch1-ai-book-insight-frontend.onrender.com",
   },
 
   {
@@ -81,7 +81,7 @@ const projects = [
     ],
     github:
       "https://github.com/Falak-Mohsin18/student-notes-portal",
-    demo: "#",
+    demo: "https://student-notes-portal-gxst.onrender.com",
   },
 ];
 

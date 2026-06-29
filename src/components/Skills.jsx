@@ -9,6 +9,12 @@ import {
   FaCss3Alt,
   FaNodeJs,
   FaBootstrap,
+  FaCode,
+  FaLaptopCode,
+  FaServer,
+  FaDatabase,
+  FaCubes,
+  FaTools,
 } from "react-icons/fa";
 
 import {
@@ -29,6 +35,8 @@ import {
 const categories = [
   {
     title: "Languages",
+    icon: <FaCode />,
+    description: "Core programming languages for web, logic & data management.",
     skills: [
       { icon: <FaJava />, name: "Java" },
       { icon: <FaPython />, name: "Python" },
@@ -40,6 +48,8 @@ const categories = [
 
   {
     title: "Frontend",
+    icon: <FaLaptopCode />,
+    description: "Modern UI libraries and styling tooling for responsive apps.",
     skills: [
       { icon: <FaReact />, name: "React" },
       { icon: <SiTailwindcss />, name: "Tailwind" },
@@ -50,6 +60,8 @@ const categories = [
 
   {
     title: "Backend",
+    icon: <FaServer />,
+    description: "Robust Python and REST framework backend services.",
     skills: [
       { icon: <SiFastapi />, name: "FastAPI" },
       { icon: <SiFlask />, name: "Flask" },
@@ -60,6 +72,8 @@ const categories = [
 
   {
     title: "Database",
+    icon: <FaDatabase />,
+    description: "Relational database modeling and SQL query engines.",
     skills: [
       { icon: <SiMysql />, name: "MySQL" },
       { icon: <SiPostgresql />, name: "PostgreSQL" },
@@ -69,6 +83,8 @@ const categories = [
 
   {
     title: "Blockchain",
+    icon: <FaCubes />,
+    description: "Decentralized Web3 network platforms and smart contracts.",
     skills: [
       { icon: <SiEthereum />, name: "Ethereum" },
       { icon: <SiSolidity />, name: "Solidity" },
@@ -76,7 +92,9 @@ const categories = [
   },
 
   {
-    title: "Tools",
+    title: "Tools & DevOps",
+    icon: <FaTools />,
+    description: "Version control systems, API testing and collaboration tools.",
     skills: [
       { icon: <FaGitAlt />, name: "Git" },
       { icon: <FaGithub />, name: "GitHub" },
@@ -89,76 +107,74 @@ function Skills() {
   return (
     <section
       id="skills"
-      className="py-32 bg-[#08111f]"
+      className="relative w-full py-[80px] overflow-hidden scroll-mt-[100px]"
     >
-      <div className="max-w-7xl mx-auto px-8">
+      {/* Background Radial Glow */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
+        <div className="absolute w-[500px] max-w-full h-[500px] rounded-full bg-blue-600/10 blur-[160px] top-1/2 right-[-100px] -translate-y-1/2" />
+      </div>
 
+      <div className="global-container relative z-10">
         <motion.div
-          initial={{ opacity: 0, y: 60 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="text-center max-w-[650px] mx-auto mb-16 md:mb-20 w-full min-w-0"
         >
-
-          <p className="uppercase tracking-[5px] text-cyan-400">
+          <span className="text-cyan-400 font-semibold uppercase tracking-[0.2em] text-xs md:text-sm block mb-3 max-w-full break-words">
             Technical Skills
-          </p>
+          </span>
 
-          <h2 className="text-6xl font-black mt-3 mb-20">
-            Technologies
-            <span className="text-cyan-400">
-              {" "}I Use
-            </span>
+          <h2 className="text-[34px] sm:text-[44px] lg:text-[52px] font-extrabold tracking-tight text-white leading-tight max-w-full break-words">
+            Technologies &
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500"> Frameworks</span>
           </h2>
-
         </motion.div>
 
-        <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-10">
-
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 w-full min-w-0">
           {categories.map((category, index) => (
-
             <motion.div
               key={category.title}
-              initial={{ opacity: 0, y: 60 }}
+              initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: index * .1 }}
-              whileHover={{ y: -10 }}
-              className="bg-slate-900 border border-slate-800 rounded-3xl p-8 hover:border-cyan-400 transition"
+              transition={{ delay: index * 0.08, duration: 0.6 }}
+              className="bg-slate-900/60 backdrop-blur-md border border-slate-800/80 rounded-[24px] p-6 sm:p-[32px] min-h-[260px] shadow-[0_0_25px_rgba(6,182,212,0.1)] hover:shadow-[0_0_35px_rgba(6,182,212,0.2)] hover:border-cyan-400/60 transition-all duration-300 flex flex-col justify-between h-full hover:-translate-y-2.5 group min-w-0 w-full"
             >
-
-              <h3 className="text-3xl font-bold mb-8">
-                {category.title}
-              </h3>
-
-              <div className="grid grid-cols-2 gap-5">
-
-                {category.skills.map((skill) => (
-
-                  <div
-                    key={skill.name}
-                    className="bg-slate-800 rounded-xl p-4 flex flex-col items-center gap-3 hover:bg-cyan-500 transition"
-                  >
-
-                    <div className="text-4xl">
-                      {skill.icon}
-                    </div>
-
-                    <p className="text-sm font-medium">
-                      {skill.name}
-                    </p>
-
+              <div>
+                <div className="flex items-center gap-4 mb-4 min-w-0">
+                  <div className="w-12 h-12 rounded-2xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400 text-2xl shrink-0 group-hover:scale-110 transition duration-300">
+                    {category.icon}
                   </div>
+                  <h3 className="text-[24px] sm:text-[28px] font-bold text-white break-words min-w-0">
+                    {category.title}
+                  </h3>
+                </div>
 
-                ))}
+                <p className="text-slate-400 text-base leading-relaxed mb-6 break-words">
+                  {category.description}
+                </p>
 
+                <div className="flex flex-wrap gap-3 w-full">
+                  {category.skills.map((skill) => (
+                    <div
+                      key={skill.name}
+                      className="bg-slate-800/80 hover:bg-cyan-500/20 border border-slate-700/60 hover:border-cyan-400/50 rounded-xl px-3.5 py-2 flex items-center gap-2.5 transition duration-300 text-slate-200"
+                    >
+                      <span className="text-lg text-cyan-400 shrink-0">
+                        {skill.icon}
+                      </span>
+                      <span className="text-sm font-medium break-words">
+                        {skill.name}
+                      </span>
+                    </div>
+                  ))}
+                </div>
               </div>
-
             </motion.div>
-
           ))}
-
         </div>
-
       </div>
     </section>
   );

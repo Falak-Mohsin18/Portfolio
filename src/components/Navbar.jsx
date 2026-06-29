@@ -15,34 +15,32 @@ function Navbar() {
 
   return (
     <motion.nav
-      initial={{ y: -80 }}
+      initial={{ y: -70 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.6 }}
-      className="fixed top-0 left-0 w-full z-50 backdrop-blur-lg bg-[#0B1120]/80 border-b border-slate-800"
+      className="fixed top-0 left-0 w-full h-[70px] z-50 backdrop-blur-md bg-[#0B1120]/85 border-b border-slate-800/80 flex items-center"
     >
-      <div className="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
-
-        <h1 className="text-2xl font-bold text-cyan-400">
+      <div className="global-container flex justify-between items-center min-w-0">
+        <a href="#home" className="text-2xl font-black text-cyan-400 tracking-tight">
           Falak<span className="text-purple-400">.</span>
-        </h1>
+        </a>
 
-        <div className="hidden md:flex gap-8">
-
+        <div className="hidden md:flex items-center gap-12">
           {links.map((link) => (
             <a
               key={link.name}
               href={link.href}
-              className="text-slate-300 hover:text-cyan-400 transition"
+              className="text-slate-300 hover:text-cyan-400 font-medium text-base transition duration-300"
             >
               {link.name}
             </a>
           ))}
-
         </div>
 
         <button
-          className="md:hidden"
+          className="md:hidden text-slate-300 hover:text-cyan-400 transition"
           onClick={() => setMenuOpen(!menuOpen)}
+          aria-label="Toggle Menu"
         >
           {menuOpen ? <X size={28} /> : <Menu size={28} />}
         </button>
@@ -50,15 +48,15 @@ function Navbar() {
 
       {menuOpen && (
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          className="md:hidden bg-[#111827] px-6 pb-6"
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="md:hidden bg-[#0B1120] border-b border-slate-800 px-8 pb-6 pt-2 space-y-3"
         >
           {links.map((link) => (
             <a
               key={link.name}
               href={link.href}
-              className="block py-3 text-slate-300 hover:text-cyan-400"
+              className="block py-2 text-slate-300 hover:text-cyan-400 font-medium text-lg"
               onClick={() => setMenuOpen(false)}
             >
               {link.name}
